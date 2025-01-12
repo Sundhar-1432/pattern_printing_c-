@@ -1,0 +1,49 @@
+// Online C++ compiler to run C++ program online
+#include <iostream>
+using namespace std;
+
+int pattern(int n){
+    int p=n;
+    for(int i=0;i<=n;i++){
+        //star
+        for(int j=p;j>0;j--){
+            cout<<"* ";
+        }
+        //space
+        for(int j=0;j<2*i;j++){
+            cout<<"  ";
+        }
+        //star
+         for(int j=p;j>0;j--){
+            cout<<"* ";
+        }
+        cout<<endl;
+        p--;
+    }
+    int space=(n*2)-2;
+    for(int i=0;i<n;i++){
+        //star
+        for(int j=0;j<=i;j++){
+            cout<<"* ";
+        }
+        //space
+        for(int j=0;j<space;j++){
+            cout<<"  ";
+        }
+        //star
+        for(int j=0;j<=i;j++){
+            cout<<"* ";
+        }
+        cout<<endl;
+        space-=2;
+    }
+    return 0;
+}
+
+int main() {
+    int n;
+    cout<<"enter your row:";
+    cin>>n;
+    pattern(n);
+    return 0;
+}
